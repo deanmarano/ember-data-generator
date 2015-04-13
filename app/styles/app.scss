@@ -1,0 +1,26 @@
+$navbar-inverse-bg: #f44c36;
+$navbar-inverse-link-color: white;
+
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "solarized-light";
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.navbar-brand > img {
+  margin-top: -8px;
+  height: 23px;
+  display: inline;
+}
+
+.code-overflow {
+  background-color: #fdf6e3;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 150px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
