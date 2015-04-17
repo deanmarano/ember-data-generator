@@ -13,9 +13,13 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <form class="navbar-form navbar-right">
-        {{#link-to 'sign-in' class="btn btn-default"}}
-          {{fa-icon "github-square"}} Sign in with Github
-        {{/link-to}}
+        {{#if session.isAuthenticated}}
+        <a {{action 'invalidateSession'}} class="btn btn-default">{{fa-icon "github-square"}} Logout</a>
+        {{else}}
+          {{#link-to 'login' class="btn btn-default"}}
+            {{fa-icon "github-square"}} Sign in with Github
+          {{/link-to}}
+        {{/if}}
       </form>
     </div>
   </div>

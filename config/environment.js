@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'data-generator',
+    podModulePrefix: 'data-generator/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -19,11 +20,17 @@ module.exports = function(environment) {
     }
   };
 
-ENV.sassOptions = {
-  includePaths: [
-    'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap'
-  ]
-}
+  ENV.sassOptions = {
+    includePaths: [
+      'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap'
+    ]
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:oauth2-bearer',
+    crossOriginWhitelist: ['https://api.github.com'],
+    store: 'simple-auth-session-store:local-storage'
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

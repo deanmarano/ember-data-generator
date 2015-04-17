@@ -6,5 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.resource('sign-in');
+  this.route('home', {path: '/'});
+  this.resource('login-callback', {path: '/login/callback'});
+  this.resource('login');
+  this.resource('welcome');
+  this.route('login-callback');
 });
